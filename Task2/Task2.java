@@ -1,8 +1,9 @@
+package Task2;
 import java.io.FileWriter;
 public class Task2 {
 
-   static void logger(int[] array, int numberIteration ){
-      try(FileWriter fw = new FileWriter("text.txt",true)) {
+   static void logger(int[] array, int numberIteration , String path){
+      try(FileWriter fw = new FileWriter(path,true)) {
          fw.write(numberIteration+") ");
          for(int i = 0; i<array.length; i++) fw.write(array[i]+", ");
          fw.write("\n");
@@ -22,7 +23,7 @@ public class Task2 {
                array[j] = x;
              }
          }
-         logger(array,i);
+         logger(array,i,"Task2/text.txt");
       }
 
       
